@@ -1,0 +1,444 @@
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+/* Webkit (Chrome, Safari) */
+/* Note: These styles may not work in all versions of Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  margin: 30px 0;
+  border-radius: 50px;
+  background: #ffffff00;
+  /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+
+  background: #19ad6f23;
+  /* Scrollbar thumb color */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1baa6f;
+  /* Scrollbar thumb color on hover */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: "Urbanist", sans-serif;
+  background-color: rgb(0, 19, 28);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: rgb(174, 174, 174);
+}
+
+
+a,
+.btn {
+  transition: all 300ms ease;
+
+}
+
+a {
+  color: rgb(174, 174, 174);
+  text-decoration: none;
+  text-decoration-color: #1baa6f;
+}
+
+a:hover {
+  color: #00ff95;
+  text-underline-offset: 1rem;
+}
+
+#namaste {
+  font-size: 30px;
+  font-family: Sacramento;
+}
+
+
+/* DESKTOP NAV */
+
+nav,
+.nav-links {
+  display: flex;
+  color: rgb(174, 174, 174);
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+
+}
+
+.nav-links:hover {
+  color: #00ff95;
+}
+
+.logo {
+
+
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+.logo:hover {
+  color: #00ff95;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3 ease-in-out;
+}
+
+.neposfoundation {
+  border: #1baa6f solid 2px;
+  border-radius: 50px;
+  padding: 8px 15px;
+  font-weight: 600;
+  background-color: #19ad6f23;
+}
+
+
+
+.section__text__p5 {
+  margin-top: 10px;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+
+/* SECTIONS */
+
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+
+
+
+/* Add this code to your existing CSS file, such as style.css */
+.section__pic-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border: 5px solid #19ad6f23;
+  border-radius: 50%;
+  padding: 0;
+  /* Remove any existing padding */
+  box-sizing: content-box;
+  /* Ensure the element's dimensions include borders */
+}
+
+.profile-img,
+.hovered-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+.hovered-img {
+  opacity: 0;
+}
+
+.section__pic-container:hover .profile-img {
+  opacity: 0;
+}
+
+.section__pic-container:hover .hovered-img {
+  opacity: 1;
+}
+
+
+
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+}
+
+
+.section__text__p3 {
+  font-size: 20px;
+}
+
+
+
+
+.btn {
+  font-weight: 300;
+  transition: all 300ms ease;
+  padding: 0.8rem;
+  width: 7rem;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  /* Hide overflowing elements during animation */
+}
+
+.btn::before {
+  font-family: urbanist;
+
+  content: attr(data-text);
+  /* Use the data-text attribute for the shining effect */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  /* Initialize width to 0 for animation */
+  height: 100%;
+  color: #fff;
+  /* Set the color of the shining effect */
+  background-color: #1baa6f;
+  /* Background color for the fill effect */
+  opacity: 0;
+  z-index: -1;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+  animation: fill-effect 5s linear infinite;
+  border-radius: 50px;
+  /* Apply border radius to match button */
+}
+
+@keyframes fill-effect {
+
+  0%,
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+
+  50% {
+    width: 100%;
+    opacity: 0.3;
+    /* Adjust opacity as needed */
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+  /* Adjust this margin as needed */
+}
+
+
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+.section__text p {
+  font-weight: 500;
+}
+
+.section__text__p1 {
+  text-align: center;
+  font-size: 1rem;
+
+}
+
+.section__text__p2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #00ff95;
+  margin: 0%
+}
+
+#learning-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+  background-color: #1baa6e3b;
+  border-radius: 50px;
+  padding: 10px;
+  pointer-events:fill;
+}
+
+.icon:hover {
+  opacity: 100%;
+}
+
+.title1 {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: center;
+  color: #00ff95;
+  font-size: 70px;
+  font-weight: 3000;
+  letter-spacing: 1px;
+
+}
+
+/* ICONS */
+
+.icon {
+  cursor: pointer;
+  height: 1.5rem;
+  opacity: 70%;
+}
+
+/* BUTTONS */
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 0.8rem;
+  width: 7rem;
+  border-radius: 50px;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  margin-top: 20px;
+  border-color: rgba(25, 173, 111, 0.139);
+
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+  color: rgb(174, 174, 174);
+  background: #1baa6e00;
+  border-radius: 40px;
+  border-width: 2px;
+  border: 0.1rem solid;
+  border-color: rgba(25, 173, 111, 0.139);
+
+
+}
+
+.btn-color-2:hover {
+  border: #1baa6f 0.1rem solid;
+  background: rgba(0, 0, 0, 0);
+
+
+}
+
+.btn-color-1 {
+  color: rgb(174, 174, 174);
+  background: #1baa6e00;
+  border-radius: 40px;
+  border-width: 2px;
+  border: 0.1rem solid;
+  border-color: rgba(25, 173, 111, 0.139);
+
+
+}
+
+.btn-color-1:hover {
+  border: #1baa6f 0.1rem solid;
+  background: rgba(0, 0, 0, 0);
+
+
+}
+
+.btn-container {
+  gap: 1rem;
+}
+
+
+.section-container {
+  gap: 4rem;
+  height: 80%;
+}
+
+.section__pic-container {
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.learning {
+  font-family: sacramento;
+  z-index: -1;
+  font-size: 15px;
+  color: #00ff95;
+}
+
+
+
+/* ******************************************************************************************* */
