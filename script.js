@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var audio = document.getElementById("myAudio");
 
-    function playMusic() {
-        audio.play();
-    }
-
-    function pauseMusic() {
-        audio.pause();
+    function toggleMusic() {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
     }
 
 // Get the logo element
