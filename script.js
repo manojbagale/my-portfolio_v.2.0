@@ -19,6 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
     typeText(0);
   });
 
+var audio = document.getElementById("myAudio");
+
+    function playMusic() {
+        audio.play();
+    }
+
+    function pauseMusic() {
+        audio.pause();
+    }
+
 // Get the logo element
 const logo = document.getElementById('logo');
 
